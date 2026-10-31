@@ -354,7 +354,10 @@ const DRAG_OPTIONS = {
 	dragClass: 'task-dragging',
 	delayOnTouchOnly: true,
 	delay: 1000,
-	// Start scrolling the board well before the pointer reaches its very edge.
+	// With native drag, sortable leaves the innermost scroll container (the board) to the
+	// browser, which only scrolls right at the edge. Let sortable scroll it instead and start
+	// well before the pointer reaches the very edge.
+	forceAutoScrollFallback: true,
 	scrollSensitivity: 100,
 } as const
 
